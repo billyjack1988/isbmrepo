@@ -22,5 +22,9 @@ def len_13(isbn_num)
     end
 end
 
+def dash_remover(isbn_code)
+    p isbn_code.gsub(/[^0-9a-z]/, '')
+end
+
 
 
