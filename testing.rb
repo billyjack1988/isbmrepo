@@ -55,6 +55,10 @@ class Ismb_Numbers < Minitest::Test
         assert_equal(1, isbn_array("7-421-3947-6"))
     end
     
+    def test_with_x
+        assert_equal(true, isbn_array("7-421-3947-x6"))
+    end
+    
 
 
 end
