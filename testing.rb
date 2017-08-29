@@ -30,7 +30,13 @@ class Ismb_Numbers < Minitest::Test
     def test_for_removing_dashes_13_numbers
         assert_equal("9780131495050", dash_remover("978-0-13-149505-0"))
     end
-     
+
+    def test_for_x_in_10_numbers
+     assert_equal("877195869x", dash_len_10("877195869x"))
+    end
+
+
+    
     
 
 end
