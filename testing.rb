@@ -32,7 +32,7 @@ class Ismb_Numbers < Minitest::Test
     end
 
     def test_for_x_in_10_numbers
-     assert_equal("877195869x", dash_len_10("877195869x"))
+     assert_equal(true, dash_len_10("877195869x"))
     end
 
 
