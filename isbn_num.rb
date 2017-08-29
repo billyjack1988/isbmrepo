@@ -35,6 +35,16 @@ new_isbn = isbn_code.gsub(/[^0-9a-z]/, '')
     end
 end
 
+def dash_len_13(isbn_code)
+new_isbn = isbn_code.gsub(/[^0-9a-z]/, '')
+    if new_isbn.length == 13
+        true
+    else
+        false
+    end
+end
+
+
 
 
 
