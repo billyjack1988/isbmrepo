@@ -39,6 +39,15 @@ class Ismb_Numbers < Minitest::Test
      assert_equal(true, dash_len_13("978-0-13-149505-0"))
     end
 
+    def test_for_with_new_func_10
+        assert_equal(true, dash_len_13_and_10("0-321-14653-0"))
+    end
+
+    def test_for_with_new_func_13
+        assert_equal(true, dash_len_13_and_10("978-0-13-149505-0"))
+    end
+    
+
 
     
     
