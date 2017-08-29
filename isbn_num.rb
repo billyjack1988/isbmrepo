@@ -60,11 +60,12 @@ def isbn_num_sum(sum_array)
         end
         if checksum == sum_array[sum_array.length - 1]
             true
-        elsif checksum == sum_array[sum_array.length - 1]
+        elsif checksum == "x"
             true
         else
             false
         end    
+
 end
 
 

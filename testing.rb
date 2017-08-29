@@ -56,8 +56,14 @@ class Ismb_Numbers < Minitest::Test
     end
     
     def test_with_x
-        assert_equal(true, isbn_array("0-123-45678-9"))
+        assert_equal(true, isbn_array("1-234-56789-x"))
     end
+
+    # def text_to_add_x
+    #     assert_equal(877195869, isbn_array(8-771-95869))
+    # end
+    
+
     
 
 
