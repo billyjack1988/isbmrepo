@@ -55,14 +55,16 @@ end
 def isbn_num_sum(sum_array)
     sum = sum_array[0] * 1 + sum_array[1] * 2 + sum_array[2] * 3+ sum_array[3] * 4+ sum_array[4] * 5+ sum_array[5] * 6 + sum_array[6] * 7 + sum_array[7] * 8 + sum_array[8] * 9
     checksum = sum%11
-        if checksum == isbn_array(sum_array.length - 1).to_i
+        if checksum == 10
+            checksum = "x"
+        end
+        if checksum == sum_array[sum_array.length - 1]
             true
-        elsif checksum == isbn_array(sum_array.length)
+        elsif checksum == sum_array[sum_array.length - 1]
             true
         else
             false
         end    
-    p checksum
 end
 
 
