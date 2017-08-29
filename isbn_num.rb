@@ -49,23 +49,27 @@ end
 def isbn_array(isbn_code)
     new_isbn = isbn_code.gsub(/[^0-9a-z]/, '')
         new_array = new_isbn.split("").map(&:to_i)
-        new_array.each do |num|
-          p  num * 1
-    p num
-    end
-    p new_array
+    isbn_num_sum(new_array)
+end
+
+def isbn_num_sum(sum_array)
+    sum = sum_array[0] * 1 + sum_array[1] * 2 + sum_array[2] * 3+ sum_array[3] * 4+ sum_array[4] * 5+ sum_array[5] * 6 + sum_array[6] * 7 + sum_array[7] * 8 + sum_array[8] * 9
+    checksum = sum%11
+    p checksum
 end
 
 
 
 
 
- 
 
 
 
 
-         
+
+
+
+
 
 
 

@@ -52,7 +52,7 @@ class Ismb_Numbers < Minitest::Test
     # end
 
     def test_for_isbn_array_to_int
-        assert_equal([0, 3, 2, 1, 1, 4, 6, 5, 3, 0], isbn_array("0-321-14653-0"))
+        assert_equal(true, isbn_array("7-421-3947-6"))
     end
     
 
