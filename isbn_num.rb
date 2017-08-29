@@ -49,6 +49,10 @@ end
 def isbn_array(isbn_code)
     new_isbn = isbn_code.gsub(/[^0-9a-z]/, '')
         new_array = new_isbn.split("").map(&:to_i)
+        new_array.each do |num|
+          p  num * 1
+    p num
+    end
     p new_array
 end
 

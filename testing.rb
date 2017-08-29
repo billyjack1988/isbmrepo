@@ -47,12 +47,12 @@ class Ismb_Numbers < Minitest::Test
         assert_equal(true, dash_len_13_and_10("978-0-13-149505-0"))
     end
     
-    def test_for_isbn_array
-        assert_equal(["0321146530"], isbn_array("0-321-14653-0"))
-    end
+    # def test_for_isbn_array
+    #     assert_equal(["0321146530"], isbn_array("0-321-14653-0"))
+    # end
 
     def test_for_isbn_array_to_int
-        assert_equal(["0321146530"], isbn_array("0-321-14653-0"))
+        assert_equal([0, 3, 2, 1, 1, 4, 6, 5, 3, 0], isbn_array("0-321-14653-0"))
     end
     
 
