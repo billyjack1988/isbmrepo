@@ -47,11 +47,14 @@ new_isbn = isbn_code.gsub(/[^0-9a-z]/, '')
 end
 
 def isbn_array(isbn_code)
-    new_array = []
     new_isbn = isbn_code.gsub(/[^0-9a-z]/, '')
-    new_array << new_isbn
+        new_array = new_isbn.split("").map(&:to_i)
     p new_array
 end
+
+
+
+
 
  
 

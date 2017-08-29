@@ -50,10 +50,11 @@ class Ismb_Numbers < Minitest::Test
     def test_for_isbn_array
         assert_equal(["0321146530"], isbn_array("0-321-14653-0"))
     end
+
+    def test_for_isbn_array_to_int
+        assert_equal(["0321146530"], isbn_array("0-321-14653-0"))
+    end
     
 
-
-    
-    
 
 end
