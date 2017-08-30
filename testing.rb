@@ -64,7 +64,7 @@ class Ismb_Numbers < Minitest::Test
     # end
 
     def test_with_13 
-        assert_equal(true, isbn_array_with_13("978-0-13-149505-0))
+        assert_equal(true, isbn_array_with_13("978-0-13-149505-0"))
     end
     
     
