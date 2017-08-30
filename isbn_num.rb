@@ -69,8 +69,8 @@ end
 # end
 
 def isbn_array_with_13(isbn_code)
-    13_isbn = isbn_code.gsub(/[^0-9]/, '')
-        new_array = 13_isbn.split("").map(&:to_i)
+    yep_isbn = isbn_code.gsub(/[^0-9]/, '')
+        new_array = yep_isbn.split("").map(&:to_i)
     isbn_num_sum_with_13(new_array)
 end
 
@@ -79,7 +79,12 @@ def isbn_num_sum_with_13(thr_array)
     checksum = sum_13 % 10
     x = 10 - checksum
     final_sum = x % 10
-    p final_sum
+    #p final_sum
+    if final_sum == thr_array[thr_array.length - 1]
+        true
+    else
+        false
+    end   
 end
 
 
