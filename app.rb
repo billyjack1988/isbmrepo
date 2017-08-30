@@ -1,8 +1,23 @@
 require "sinatra"
 require_relative "isbn_num.rb"
+enable :sessions
 
 get "/" do 
     erb :isbn_choice
 end
 
-post
+post "/isbn_numbers" do
+    isbn_ten = params[:ten]
+    isbn_thr = params[:thr]
+    # p "#{isbn_ten}this is ten isbn #{isbn_thr}this is thr isbn"
+   redirect'/results?ten='+ isbn_ten + '&thr=' + isbn_thr
+end
+
+get '/results'
+    erb :results, locals:{ten: isbn_ten, thr: isbn_thr}
+end
+
+
+
+
+    
