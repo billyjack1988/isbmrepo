@@ -51,18 +51,24 @@ class Ismb_Numbers < Minitest::Test
     #     assert_equal(["0321146530"], isbn_array("0-321-14653-0"))
     # end
 
-    def test_for_isbn_array_to_int
-        assert_equal(true, isbn_array("0-123-45678-9"))
-    end
+    # def test_for_isbn_array_to_int
+    #     assert_equal(true, isbn_array("0-123-45678-9"))
+    # end
     
-    def test_with_x
-        assert_equal(true, isbn_array("1-234-56789-x"))
-    end
+    # def test_with_x
+    #     assert_equal(true, isbn_array("1-234-56789-x"))
+    # end
 
     # def text_to_add_x
     #     assert_equal(877195869, isbn_array(8-771-95869))
     # end
+
+    def test_with_13 
+        assert_equal(true, isbn_array_with_13("978-0-13-149505-0))
+    end
     
+    
+
 
     
 
