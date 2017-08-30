@@ -46,27 +46,27 @@ new_isbn = isbn_code.gsub(/[^0-9a-z]/, '')
     end
 end
 
-# def isbn_array(isbn_code)
-#     new_isbn = isbn_code.gsub(/[^0-9a-z]/, '')
-#         new_array = new_isbn.split("").map(&:to_i)
-#     isbn_num_sum(new_array)
-# end
+def isbn_array(isbn_code)
+    new_isbn = isbn_code.gsub(/[^0-9a-z]/, '')
+        new_array = new_isbn.split("").map(&:to_i)
+    isbn_num_sum(new_array)
+end
 
-# def isbn_num_sum(new_array)
-#     sum = new_array[0] * 1 + new_array[1] * 2 + new_array[2] * 3+ new_array[3] * 4+ new_array[4] * 5+ new_array[5] * 6 + new_array[6] * 7 + new_array[7] * 8 + new_array[8] * 9
-#     checksum = sum%11
-#         if checksum == 10
-#             checksum = "x"
-#         end
-#         if checksum == new_array[new_array.length - 1]
-#             true
-#         elsif checksum == "x"
-#             true
-#         else
-#             false
-#         end    
+def isbn_num_sum(new_array)
+    sum = new_array[0] * 1 + new_array[1] * 2 + new_array[2] * 3+ new_array[3] * 4+ new_array[4] * 5+ new_array[5] * 6 + new_array[6] * 7 + new_array[7] * 8 + new_array[8] * 9
+    checksum = sum%11
+        if checksum == 10
+            checksum = "x"
+        end
+        if checksum == new_array[new_array.length - 1]
+            true
+        elsif checksum == "x"
+            true
+        else
+            false
+        end    
 
-# end
+end
 
 def isbn_array_with_13(isbn_code)
     yep_isbn = isbn_code.gsub(/[^0-9]/, '')
