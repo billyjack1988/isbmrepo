@@ -16,9 +16,18 @@ end
 get '/result' do
     isbn_ten = params[:ten]
     isbn_thr = params[:thr]  
-    isbn_fuck = isbn_array(isbn_ten)
-    p "#{isbn_fuck}this is after calling on func"
-    # erb :results, locals:{ten: isbn_ten, thr: isbn_thr}
+        if isbn_ten == "" 
+
+        else 
+             isbn_fuck = isbn_array(isbn_ten)
+        end
+        if isbn_thr == ""
+
+        else
+            isbn_shit = isbn_array_with_13(isbn_thr)
+        end
+    # p "#{isbn_fuck}this is after calling on func"
+    erb :results, locals:{ isbn_num: isbn_fuck, isbn_teen: isbn_shit}
     # p "#{isbn_ten}this is ten isbn #{isbn_thr}this is thr isbn"
 end
 
