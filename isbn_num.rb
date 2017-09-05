@@ -46,6 +46,44 @@ new_isbn = isbn_code.gsub(/[^0-9a-z]/, '')
     end
 end
 
+def key_checker_ten(isbn_code)
+	arr = isbn.split(//)
+	true_arr = []
+	valid_keys = ["0","1","2","3","4","5","6","7","8","9","x","-"," "]
+		arr.each do |x|
+			if valid_keys.include?(x)
+				true_arr << true
+			else
+				true_arr << false
+			end
+		end
+
+	if true_arr.include?(false)
+		false
+	else
+		true
+	end
+
+end
+
+def key_checker_thr(isbn_code)
+	arr = isbn.split(//)
+		true_arr = []	
+		valid_keys = ["0","1","2","3","4","5","6","7","8","9","-"," "]
+		arr.each do |x|
+			if valid_keys.include?(x)
+				true_arr << true
+			else
+				true_arr << false
+			end
+		end
+	if true_arr.include?(false)
+		false
+	else
+		true
+	end
+end
+
 def isbn_array(isbn_code)
     new_isbn = isbn_code.gsub(/[^0-9a-z]/, '')
         new_array = new_isbn.split("").map(&:to_i)
