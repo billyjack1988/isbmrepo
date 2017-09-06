@@ -9,7 +9,7 @@
 }
 
 .text_color {
-    color: black
+    color: blue
 }
 
 .font_size {
@@ -31,9 +31,18 @@
 
 @font-face {
     font-family: 'myfont';
-    src: url('/fonts/drip.ttf');
+    src: url('/fonts/n_font.ttf');
 }
 
 .font_type {
     font-family: 'myfont';
+}
+
+@font-face {
+    font-family: '2ndfont';
+    src: url('/fonts/drip.ttf');
+}
+
+.nd_font {
+    font-family: '2ndfont'
 }

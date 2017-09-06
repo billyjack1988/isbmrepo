@@ -36,13 +36,13 @@ get '/result' do
 end
 
 post '/csv_num' do
+    isbn_csv = []
     CSV.foreach("input_isbn_file.csv") do |row|
-        isbn_csv = size_check(row[1])
-        p isbn_csv
+        isbn_csv << row[1]
+        isbn_csv << size_check(row[1])
+        # p isbn_csv
     end
-erb :csv_num1, locals: {}
-
-  
+erb :csv_num1, locals: {isbn_csv: isbn_csv}
 end
 
 
