@@ -99,11 +99,19 @@ end
 def isbn_array(isbn_code)
     if key_checker_ten(isbn_code) == true
        new_isbn = isbn_code.gsub(/[^0-9a-z]/, '') 
-       p "#{new_isbn.class} this is new isbn"
+    #    p "#{new_isbn.class} this is new isbn"
        new_array = new_isbn.split("")
-       isbn_num_sum(new_array)
-    else 
-        "invaild"
+       last = new_array.slice!(-1)
+       if new_array.include?("x")
+           false 
+        elsif new_array.include?("X")
+            false
+        else 
+            new_array << last
+        end
+            isbn_num_sum(new_array)
+        else 
+            "invaild"
     end
 end
 
@@ -113,7 +121,7 @@ def isbn_num_sum(new_array)
         if checksum == 10
             checksum = "x"
         end
-        p "#{new_array} this is the new array before turn to checksum"
+        # p "#{new_array} this is the new array before turn to checksum"
         if checksum.to_s == new_array[new_array.length - 1]
             # p "#{checksum} yooo loooooook er"
             true
