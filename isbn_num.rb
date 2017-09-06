@@ -46,19 +46,31 @@ new_isbn = isbn_code.gsub(/[^0-9a-z]/, '')
     end
 end
 
+def size_check(x)
+    size_isbn = x.gsub(/[^0-9x]/, '')
+    # p "#{size_isbn}size befor test for lenght"
+        if size_isbn.length == 10
+            isbn_array(x)
+        elsif size_isbn.length == 13
+            isbn_array_with_13(x)
+        else 
+            "invaild" 
+        end
+end
+
+
 def key_checker_ten(isbn_code)
-	arr = isbn.split(//)
+	arr = isbn_code.split(//)
 	true_arr = []
 	valid_keys = ["0","1","2","3","4","5","6","7","8","9","x","-"," "]
-		arr.each do |x|
-			if valid_keys.include?(x)
-				true_arr << true
-			else
-				true_arr << false
-			end
+	arr.each do |x|
+		if valid_keys.include?(x)
+			true_arr << true
+		else
+			true_arr << false
 		end
-
-	if true_arr.include?(false)
+	end
+    if true_arr.include?(false)
 		false
 	else
 		true
@@ -67,16 +79,16 @@ def key_checker_ten(isbn_code)
 end
 
 def key_checker_thr(isbn_code)
-	arr = isbn.split(//)
-		true_arr = []	
-		valid_keys = ["0","1","2","3","4","5","6","7","8","9","-"," "]
-		arr.each do |x|
-			if valid_keys.include?(x)
-				true_arr << true
-			else
-				true_arr << false
-			end
+    arr = isbn_code.split(//)
+    true_arr = []	
+	valid_keys = ["0","1","2","3","4","5","6","7","8","9","-"," "]
+	arr.each do |x|
+		if valid_keys.include?(x)
+			true_arr << true
+		else
+			true_arr << false
 		end
+	end
 	if true_arr.include?(false)
 		false
 	else
@@ -85,13 +97,17 @@ def key_checker_thr(isbn_code)
 end
 
 def isbn_array(isbn_code)
-    new_isbn = isbn_code.gsub(/[^0-9a-z]/, '')
-        new_array = new_isbn.split("").map(&:to_i)
-    isbn_num_sum(new_array)
+    if key_checker_ten(isbn_code) == true
+       new_isbn = isbn_code.gsub(/[^0-9a-z]/, '') 
+       new_array = new_isbn.split("").map(&:to_i)
+       isbn_num_sum(new_array)
+    else 
+        "invaild"
+    end
 end
 
 def isbn_num_sum(new_array)
-    sum = new_array[0] * 1 + new_array[1] * 2 + new_array[2] * 3+ new_array[3] * 4+ new_array[4] * 5+ new_array[5] * 6 + new_array[6] * 7 + new_array[7] * 8 + new_array[8] * 9
+    sum = new_array[0] * 1 + new_array[1] * 2 + new_array[2] * 3 + new_array[3] * 4 + new_array[4] * 5 + new_array[5] * 6 + new_array[6] * 7 + new_array[7] * 8 + new_array[8] * 9
     checksum = sum%11
         if checksum == 10
             checksum = "x"
@@ -107,9 +123,14 @@ def isbn_num_sum(new_array)
 end
 
 def isbn_array_with_13(isbn_code)
-    yep_isbn = isbn_code.gsub(/[^0-9]/, '')
+    if key_checker_thr(isbn_code) == true
+        yep_isbn = isbn_code.gsub(/[^0-9]/, '')
         new_array = yep_isbn.split("").map(&:to_i)
-    isbn_num_sum_with_13(new_array)
+        isbn_num_sum_with_13(new_array)
+    else
+        "invaild"
+    end
+
 end
 
 def isbn_num_sum_with_13(thr_array)
