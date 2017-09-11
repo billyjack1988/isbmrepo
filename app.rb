@@ -2,6 +2,9 @@ require "sinatra"
 require "csv"
 require_relative "isbn_num.rb"
 enable :sessions
+require 'rubygems'
+require 'Aws-sdk'
+require_relative "push_to_bucket.rb"
 
 
 
@@ -56,6 +59,7 @@ isbn_csv = []
         end
     end
     pick = CSV.read("myresults.csv")
+    connect_to_s3()
 erb :csv_num1, locals: {pick: pick}
 end
 
