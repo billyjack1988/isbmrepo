@@ -46,3 +46,7 @@
 .nd_font {
     font-family: '2ndfont'
 }
+
+.text_col {
+    color: pink !important;
+}
