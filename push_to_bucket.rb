@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'Aws-sdk'
+require 'aws-sdk'
 require 'csv'
 
 
