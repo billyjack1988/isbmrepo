@@ -13,24 +13,22 @@ get "/" do
 end
 
 post "/isbn_numbers" do
-    isbn_ten = params[:ten]
-    isbn_thr = params[:thr]
+    session[:isbn_ten] = params[:ten]
+    session[:isbn_thr] = params[:thr]
     # p "#{isbn_ten}this is ten isbn #{isbn_thr}this is thr isbn"
-   redirect'/result?ten='+ isbn_ten + '&thr=' + isbn_thr
+   redirect'/result'
 end
 
 get '/result' do
-    isbn_ten = params[:ten]
-    isbn_thr = params[:thr]  
-        if isbn_ten == "" 
+    if session[:isbn_ten] == "" 
 
         else 
-             isbn_fuck = isbn_array(isbn_ten)
+            isbn_fuck = isbn_array(session[:isbn_ten])
         end
-        if isbn_thr == ""
+        if session[:isbn_thr] == ""
 
         else
-            isbn_shit = isbn_array_with_13(isbn_thr)
+            isbn_shit = isbn_array_with_13(session[:isbn_thr])
         end
     # p "#{isbn_fuck}this is after calling on func"
     erb :results, locals:{ isbn_num: isbn_fuck, isbn_teen: isbn_shit}
