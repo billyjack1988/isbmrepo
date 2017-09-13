@@ -3,7 +3,7 @@ require "csv"
 require_relative "isbn_num.rb"
 enable :sessions
 require 'rubygems'
-require 'Aws-sdk'
+require 'aws-sdk'
 require_relative "push_to_bucket.rb"
 
 get "/" do
