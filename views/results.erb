@@ -1,4 +1,28 @@
-<h1 class = "text_color font_size cent"><img src = "/images/gaf_txt.png" width = "25%"></h2>
+<p class = "cent text_color font "><%=number%> is <%=result%>
 
-<h2 class = "text_color font_size cent font_type"> <%=isbn_num%> <br>
-<%=isbn_teen%></h2>
+<br>
+<br>
+
+<br>
+<br>
+<%newnum = ready.count%>
+<br><br>
+<%ready << "#{newnum},#{number},#{result}"%>
+New list, with your number now added<br><br>
+<%ready.each do |num|%>
+	<%=num%><br>
+<%end%>	
+<%CSV.open("myresults.csv", "w") do |csv|%>
+	<%ready.each do |n|%>
+	  <%csv << [n]%>
+	<%end%>	
+<%end%>
+
+<%Aws::S3::Client.new()%>
+<%file = "myresults.csv"%> 
+  <%bucket = 'isbnbucket14'%>
+  <%s3 = Aws::S3::Resource.new(region: 'us-east-2')%>
+  <%obj = s3.bucket(bucket).object(file)%>
+    <%File.open('myresults.csv', 'rb') do |file|%>
+      <%obj.put(body: file)%>
+    <%end%></p>
