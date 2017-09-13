@@ -23,15 +23,15 @@ get '/result' do
     if session[:isbn_ten] == "" 
 
         else 
-            isbn_fuck = isbn_array(session[:isbn_ten])
+            isbn_small = isbn_array(session[:isbn_ten])
         end
         if session[:isbn_thr] == ""
 
         else
-            isbn_shit = isbn_array_with_13(session[:isbn_thr])
+            isbn_big = isbn_array_with_13(session[:isbn_thr])
         end
-    # p "#{isbn_fuck}this is after calling on func"
-    erb :results, locals:{ isbn_num: isbn_fuck, isbn_teen: isbn_shit}
+    # p "#{isbn_small}this is after calling on func"
+    erb :results, locals:{ isbn_num: isbn_small, isbn_teen: isbn_big}
     # p "#{isbn_ten}this is ten isbn #{isbn_thr}this is thr isbn"
 end
 
