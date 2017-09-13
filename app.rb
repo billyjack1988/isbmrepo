@@ -57,9 +57,23 @@ isbn_csv = []
         end
     end
     pick = CSV.read("myresults.csv")
-    connect_to_s3()
+    bucket_list_1= connect_to_s3()
 erb :csv_num1, locals: {pick: pick}
 end
+
+
+post '/bklist' do
+  redirect'/bill'
+end
+
+get '/bill' do 
+    git_list = get_object() 
+    erb :bill, locals:{git_list:git_list}
+end 
+ 
+
+
+
 
 
 

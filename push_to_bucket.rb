@@ -28,13 +28,13 @@ def get_object()
    s3 = Aws::S3::Client.new
   resp = s3.get_object(bucket:'isbnbucket14', key:'myresults.csv')
   isbn = resp.body.read
-  if isbn == nil
-    yup = nil
-  else
     yup = isbn.split
-      
-  end
-  yup
+    uknow = []
+    yup.each do |item|
+    item.gsub!(/"/, '')
+    uknow << item
+    end
+  uknow
 end
 
 connect_to_s3()

@@ -50,3 +50,12 @@
 .text_col {
     color: pink !important;
 }
+
+@font-face {
+    font-family: 'spfont';
+    src: url('/fonts/spidy.ttf');
+}
+
+.spid_font {
+    font-family: "spfont"
+}
